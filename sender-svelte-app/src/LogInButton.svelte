@@ -2,11 +2,13 @@
     export let loggedIn = false;
     let text;
     $: if (loggedIn) {
-
+        text = "Log Out";
+    } else {
+        text = "Log In";
     }
 </script>
 
-<button on:click>
+<button on:click class="lib">
     {text}
 </button>
 

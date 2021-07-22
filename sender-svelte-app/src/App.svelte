@@ -2,17 +2,13 @@
 	import {
 		onMount
 	} from 'svelte';
-	import LogInButton from './LogInButton.svelte';
+
+	import Header from './Header.svelte';
 
 	let name;
 	let text;
-	let loggedIn;
 
-	function handleClick() {
-		console.log("yo");
-		name += "htei";
-		text += " jam"
-	}
+
 
 	onMount(() => {
 		name = "will";
@@ -20,25 +16,23 @@
 	})
 </script>
 
+<Header />
+
 <main>
 	<h1>Hello {name}!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	<LogInButton on:click={handleClick} loggedIn="{loggedIn}" />
 </main>
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
 
+
+
+<style>
 	h1 {
-		color: #ff3e00;
+		color: var(--blak);
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
+		margin: 10px;
 	}
 
 	@media (min-width: 640px) {

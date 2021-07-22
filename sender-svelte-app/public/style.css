@@ -1,0 +1,9 @@
+:root {
+    --blak: #111;
+    --wite: #eee;
+}
+
+main {
+    margin: 10 px;
+    padding: 0px;
+}
