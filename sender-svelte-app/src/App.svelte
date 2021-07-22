@@ -24,8 +24,6 @@
 </main>
 
 
-
-
 <style>
 	h1 {
 		color: var(--blak);
