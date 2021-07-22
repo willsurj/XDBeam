@@ -1,10 +1,29 @@
 <script>
-	export let name;
+	import {
+		onMount
+	} from 'svelte';
+	import LogInButton from './LogInButton.svelte';
+
+	let name;
+	let text;
+	let loggedIn;
+
+	function handleClick() {
+		console.log("yo");
+		name += "htei";
+		text += " jam"
+	}
+
+	onMount(() => {
+		name = "will";
+		text = 'hi';
+	})
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<LogInButton on:click={handleClick} loggedIn="{loggedIn}" />
 </main>
 
 <style>
