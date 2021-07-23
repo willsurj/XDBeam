@@ -1,9 +1,34 @@
 :root {
-    --blak: #111;
-    --wite: #eee;
+    --black: #111;
+    --white: #eee;
+    --green: #22b573;
+    --blue: #278dc1;
+    --middle: #25a09b;
 }
 
 main {
     margin: 10 px;
     padding: 0px;
+}
+
+.gradient-stop-1 {
+    stop-color: var(--green);
+}
+
+.gradient-stop-2 {
+    stop-color: var(--blue);
+}
+
+.cls-1 {
+    opacity: 0;
+    fill: url(#linear-gradient);
+}
+
+.cls-2 {
+    fill: white !important; /* he he he */
+    /* opacity: 0.76; */
+}
+
+.cls-3 {
+    fill: white !important;
 }
