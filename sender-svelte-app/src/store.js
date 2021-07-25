@@ -6,3 +6,5 @@ import {
 export const loggedIn = writable(false);
 
 export const apiData = writable({});
+
+export const apiLoading = writable(true);

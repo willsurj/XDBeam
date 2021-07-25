@@ -1,44 +1,48 @@
 <script>
 	import {
-		onMount
-	} from 'svelte';
+		apiData,
+		apiLoading
+	} from './store';
 
 	import {
-		apiData
-	} from './store';
+		onMount
+	} from 'svelte';
 
 	import Button from './components/Button.svelte';
 	import Header from './components/Header.svelte';
 
-	onMount(async () => {
-		fetch("https://frontier.livenet.digitalbits.io/fee_stats")
+	const apiRequest = async () => {
+		apiLoading.set(true);
+		fetch("https://frontier.testnet.digitalbits.io/assets")
 			.then(response => response.json())
 			.then(data => {
 				console.log(data);
 				apiData.set(data);
+				apiLoading.set(false);
 			}).catch(error => {
 				console.log(error);
 				return {};
 			})
-	})
+
+	}
+
+	let btnText;
+
+	$: if ($apiLoading) {
+		btnText = "Loading..."
+	} else {
+		btnText = "Pull from API";
+	}
+
+	onMount(apiRequest);
 </script>
 
 <Header />
 
 <main>
-	<Button>API Request</Button>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<Button on:click="{apiRequest}">{btnText}</Button>
 
-	<pre>
-{JSON.stringify($apiData.last_ledger)}
-	</pre>
+	<p>
+		{JSON.stringify($apiData)}
+	</p>
 </main>
-
-
-<style>
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
