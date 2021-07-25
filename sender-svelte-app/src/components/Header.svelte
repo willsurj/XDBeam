@@ -1,19 +1,11 @@
 <script>
     import Logo from '../../public/assets/logoColour.svg'
-    import LogInButton from './LogInButton.svelte';
-    import {
-        loggedIn
-    } from '../store.js';
-
-    function logInClick() {
-        console.log("Log In Button Clicked");
-        loggedIn.update((li) => (!li));
-    }
+    import LogIn from './LogIn.svelte';
 </script>
 
 <header>
     <Logo width="200px" style="fill:white" />
-    <LogInButton on:click={logInClick} loggedIn={$loggedIn} />
+    <LogIn />
 </header>
 
 <style>

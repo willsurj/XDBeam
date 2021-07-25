@@ -30,7 +30,7 @@
     $: if ($apiLoading) {
         btnText = "Loading..."
     } else {
-        btnText = "Pull from API";
+        btnText = "Refresh Data";
     }
 
     onMount(apiRequest);

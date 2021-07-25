@@ -30,6 +30,10 @@ main {
     max-width: 1200px;
 }
 
+input {
+    margin: 0;
+}
+
 .gradient-stop-1 {
     stop-color: var(--green);
 }
@@ -44,7 +48,7 @@ main {
 }
 
 .cls-2 {
-    fill: white !important; /* he he he */
+    fill: white !important; /* can be removed for gradient */
     /* opacity: 0.76; */
 }
 
