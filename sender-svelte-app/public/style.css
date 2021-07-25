@@ -13,9 +13,20 @@
     --btn-txt-a: rgb(232, 248, 243);
 }
 
+h1 {
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 4em;
+    font-weight: 100;
+    margin: 10px;
+}
+
 main {
-    margin: 10 px;
+    margin: 10px;
     padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .gradient-stop-1 {

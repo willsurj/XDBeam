@@ -3,36 +3,39 @@
 		onMount
 	} from 'svelte';
 
+	import {
+		apiData
+	} from './store';
+
+	import Button from './components/Button.svelte';
 	import Header from './components/Header.svelte';
 
-	let name;
-	let text;
-
-
-
-	onMount(() => {
-		name = "will";
-		text = 'hi';
+	onMount(async () => {
+		fetch("https://frontier.livenet.digitalbits.io/fee_stats")
+			.then(response => response.json())
+			.then(data => {
+				console.log(data);
+				apiData.set(data);
+			}).catch(error => {
+				console.log(error);
+				return {};
+			})
 	})
 </script>
 
 <Header />
 
 <main>
-	<h1>{text} {name}!</h1>
+	<Button>API Request</Button>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+
+	<pre>
+{JSON.stringify($apiData.last_ledger)}
+	</pre>
 </main>
 
 
 <style>
-	h1 {
-		color: var(--blak);
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-		margin: 10px;
-	}
-
 	@media (min-width: 640px) {
 		main {
 			max-width: none;
