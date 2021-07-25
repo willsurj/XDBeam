@@ -9,6 +9,6 @@
     }
 </script>
 
-<Button on:click>
+<Button btnClass="lib" on:click>
     {text}
 </Button>

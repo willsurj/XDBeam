@@ -1,9 +1,9 @@
 <script>
-    import Logo from '../public/assets/logoColour.svg'
+    import Logo from '../../public/assets/logoColour.svg'
     import LogInButton from './LogInButton.svelte';
     import {
         loggedIn
-    } from './store.js';
+    } from '../store.js';
 
     function logInClick() {
         console.log("Log In Button Clicked");

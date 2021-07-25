@@ -4,6 +4,13 @@
     --green: #22b573;
     --blue: #278dc1;
     --middle: #25a09b;
+
+    --btn-bg: rgb(218, 236, 230);
+    --btn-txt: #538176;
+    --btn-bg-h: rgb(198, 216, 210);
+    --btn-txt-h: #4b9282;
+    --btn-bg-a: #2b574c;
+    --btn-txt-a: rgb(232, 248, 243);
 }
 
 main {
