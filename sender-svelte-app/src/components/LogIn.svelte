@@ -34,7 +34,8 @@
         logInKey.set(key);
         loggedIn.update((li) => (!li));
         wantsToLogIn = false;
-        console.log($logInKey)
+        console.log(logInKey);
+        console.log($logInKey);
     }
 </script>
 
