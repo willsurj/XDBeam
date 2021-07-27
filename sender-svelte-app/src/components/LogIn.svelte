@@ -1,38 +1,65 @@
 <script>
     import Button from './Button.svelte'
     import {
-        loggedIn
+        apiData,
+        apiLoading,
+        loggedIn,
+        logInKey
     } from '../store.js';
 
+    let wantsToLogIn = false;
     let text;
+    $: key = $logInKey;
     $: if ($loggedIn) {
         text = "Log Out";
     } else {
         text = "Log In";
     }
 
+    function logInFormClick() {
+        wantsToLogIn = true;
+    }
+
+    function logOutClick() {
+        console.log("Log Out Button Clicked");
+        loggedIn.update((li) => (!li));
+        wantsToLogIn = false;
+        logInKey.set("");
+        apiData.set("");
+        apiLoading.set(false);
+    }
+
     function logInClick() {
         console.log("Log In Button Clicked");
+        logInKey.set(key);
         loggedIn.update((li) => (!li));
+        wantsToLogIn = false;
+        console.log($logInKey)
     }
 </script>
 
 {#if $loggedIn} 
 <!-- log out button -->
-<label>
-    <button>
-        Log Out
-    </button>
-</label>
+<Button btnClass="lib" on:click={logOutClick}>
+    <span>{text}</span>
+</Button>
 
 {:else}
 <!-- log in block -->
+{#if !wantsToLogIn}
+<Button btnClass="lib" on:click={logInFormClick}>
+    <span>{text}</span>
+</Button>
+
+{:else}
+
 <form action="">
-    <label><input type="text"></label>  
+    <label><input type="text" bind:value={key}></label>  
         <Button btnClass="lib" on:click={logInClick}>
-            {text}
+            <span>{text}</span>
         </Button>
     </form>
+{/if}
 {/if}
 
 <style lang="scss">
@@ -40,4 +67,8 @@
     label {
         display: inline;
     }
+    form > * {
+        margin-right: 1em;
+    }
+
 </style>

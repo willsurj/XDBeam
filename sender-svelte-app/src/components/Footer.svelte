@@ -1,5 +1,6 @@
 <footer>
-    <p>Made by Will Surjenko for the Next Top Blockchain Hackathon</p>
+    <p>Made by Will Surjenko for the <a href="https://topblockchainstartup.com/"><strong>Next Top Blockchain
+                Startup</strong> Hackathon</a></p>
 </footer>
 
 <style>
@@ -12,5 +13,10 @@
 
     p {
         margin: 2em;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
     }
 </style>

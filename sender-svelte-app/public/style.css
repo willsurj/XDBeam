@@ -61,3 +61,7 @@ input {
 .cls-3 {
     fill: white !important;
 }
+
+.lib > span {
+    text-transform: uppercase;
+}

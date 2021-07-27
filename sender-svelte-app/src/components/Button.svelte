@@ -1,18 +1,19 @@
 <script>
     export let btnClass = "";
+    export let btnType = "button";
 </script>
 
-<button class={btnClass} on:click>
+<button type={btnType} class={btnClass} on:click>
     <slot>Click Me</slot>
 </button>
 
-<style>
+<style lang="scss">
     button {
         background: var(--btn-bg);
         color: var(--btn-txt);
         border: unset;
         border-radius: 6px;
-        padding: .75rem 1.5rem;
+        padding: .5rem 1rem;
         cursor: pointer;
         transition: 100ms;
         margin: 0;
@@ -30,6 +31,11 @@
     }
 
     .lib {
-        margin-right: 1em
+        margin-right: 1em;
+        width: 7rem;
+        height: 3em;
+        font-size: 1.1em;
+        font-weight: 700;
+        font-family: "Quicksand", sans-serif;
     }
 </style>
