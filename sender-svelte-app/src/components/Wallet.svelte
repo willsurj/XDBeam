@@ -2,8 +2,7 @@
     import {
         apiData,
         apiLoading,
-        logInKey,
-        apiRequest
+        logInKey
     } from '../store';
 
     import {
@@ -11,6 +10,22 @@
     } from 'svelte';
 
     import Button from './Button.svelte'
+
+    const apiRequest = async () => {
+        apiLoading.set(true);
+        let url = "https://frontier.testnet.digitalbits.io/accounts/" + $logInKey;
+        await fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                apiData.set(data);
+                apiLoading.set(false);
+            }).catch(error => {
+                console.log(error);
+                apiLoading.set(false);
+                return {};
+            })
+    }
 
     let btnText;
 
