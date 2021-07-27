@@ -4,6 +4,7 @@
     --green: #22b573;
     --blue: #278dc1;
     --middle: #25a09b;
+    --light: #7ce6e2;
 
     --btn-bg: rgb(218, 236, 230);
     --btn-txt: #538176;
@@ -19,6 +20,11 @@ h1 {
     font-size: 4em;
     font-weight: 100;
     margin: 10px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 main {

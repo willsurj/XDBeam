@@ -19,9 +19,12 @@
 
 {#if $loggedIn} 
 <!-- log out button -->
-<Button btnClass="lib" on:click={logInClick}>
-    {text}
-</Button>
+<label>
+    <button>
+        Log Out
+    </button>
+</label>
+
 {:else}
 <!-- log in block -->
 <form action="">
@@ -32,10 +35,9 @@
     </form>
 {/if}
 
-<style>
+<style lang="scss">
+    // hehe
     label {
         display: inline;
-        margin-right: 1em;
-        color: -internal-light-dark(var(--middle), white);
     }
 </style>

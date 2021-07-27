@@ -10,6 +10,9 @@
 
 <style>
     header {
+        width: 100%;
+        position: sticky;
+        top: 0;
         background: var(--middle);
         background: linear-gradient(-150deg, rgba(34, 181, 115, 1) 0%, rgba(39, 141, 193, 1) 100%);
         display: flex;
@@ -17,5 +20,6 @@
         margin: 0 auto;
         align-items: center;
         justify-content: space-between;
+        box-sizing: border-box;
     }
 </style>

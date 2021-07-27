@@ -39,7 +39,21 @@
 <main>
     <Button on:click="{apiRequest}">{btnText}</Button>
 
-    <p>
-        {JSON.stringify($apiData)}
-    </p>
+    <div class={$apiLoading ? "loading" : "response" }>
+        <code>
+            {JSON.stringify($apiData)}
+        </code>
+    </div>
 </main>
+
+<style lang="scss">
+    .response,
+    .loading {
+        max-width: 80%;
+        overflow: scroll;
+    }
+
+    .loading {
+        color: rgb(172, 172, 172);
+    }
+</style>
