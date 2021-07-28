@@ -17,7 +17,7 @@ If you have any feedback or advice, I can be contacted through info@xdbe.am (I'l
 
 ### Thanks for taking a look!
 
-(This part is for me to organise myself haha)
+(The rest is to organise myself haha)
 
 ## To Do:
 
@@ -29,7 +29,6 @@ If you have any feedback or advice, I can be contacted through info@xdbe.am (I'l
     - even though i spent so much time on it ;((((
   - Test out the transaction builder part
 - Download Go, PostgreSQL, and the federation server and test them locally
-- 
 
 
 ### To Do but less important
@@ -96,4 +95,5 @@ Given the current time limitations, what *will* happen (if there is no record) i
 - API and App continue as if nothing went wrong
   
 New API can be integrated into the fed server if I learn GoLang, or it can be made with Node.js and put onto HostCab.
+Advantage of Node is the reuse of the JS SDK I'm using in the web app, and also more tutorials and dev help.
 Probably initial implementation with Node and then if I am told to continue development I can do Go as well.
