@@ -1,6 +1,6 @@
 # XDBeam
 
-### Send digitalbits to anyone
+### Send digitalbits to *anyone*
 
 This is my project for the [**Next Top Blockchain Startup** Hackathon][1].
 It is based off an idea from the [digitalbits docs][2] which will be the first of its kind in the digitalbits ecosystem.
