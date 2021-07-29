@@ -1,6 +1,6 @@
 <script>
     import {
-        apiData,
+        balances,
         apiLoading,
         logInKey,
         apiRequest
@@ -10,6 +10,7 @@
         onMount
     } from 'svelte';
 
+    import TokenBalance from './TokenBalance.svelte';
     import Button from './Button.svelte'
 
     let btnText;
@@ -27,17 +28,24 @@
     <Button on:click="{apiRequest}">{btnText}</Button>
 
     <div class={$apiLoading ? "loading" : "response" }>
-        <code>
-            {JSON.stringify($apiData)}
-        </code>
+        <h3>Token Balances</h3>
+        {#if !$apiLoading}
+        {#each $balances as tb}
+            <TokenBalance {...tb}/>
+        {/each}
+        {/if}
     </div>
 </main>
 
 <style lang="scss">
     .response,
     .loading {
-        max-width: 80%;
-        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        justify-content: safe;
+        align-items: center;
+        width: 50%;
+        overflow: hidden;
     }
 
     .loading {

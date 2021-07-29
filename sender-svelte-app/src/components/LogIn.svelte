@@ -6,6 +6,10 @@
         loggedIn,
         logInKey
     } from '../store.js';
+    import {
+        fade,
+        fly
+    } from 'svelte/transition';
 
     let wantsToLogIn = false;
     let text;
@@ -41,10 +45,11 @@
 
 {#if $loggedIn} 
 <!-- log out button -->
+<div>
 <Button btnClass="lib" on:click={logOutClick}>
     <span>{text}</span>
 </Button>
-
+</div>
 {:else}
 <!-- log in block -->
 {#if !wantsToLogIn}
@@ -55,7 +60,7 @@
 {:else}
 
 <form action="">
-    <label><input type="text" bind:value={key}></label>  
+    <label><input type="text" bind:value={key} in:fade></label>  
         <Button btnClass="lib" on:click={logInClick}>
             <span>{text}</span>
         </Button>

@@ -1,5 +1,6 @@
 import {
-    writable
+    writable,
+    derived
 } from 'svelte/store';
 
 export const loggedIn = writable(false);
@@ -9,6 +10,8 @@ export const logInKey = writable("");
 export const apiData = writable({});
 
 export const apiLoading = writable(true);
+
+export const balances = derived(apiData, $apiData => $apiData.balances)
 
 export const apiRequest = async () => {
     apiLoading.set(true);
