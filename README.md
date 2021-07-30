@@ -23,6 +23,12 @@ If you have any feedback or advice, I can be contacted through info@xdbe.am (I'l
 
 - Add a wallet part to display:
   - Most recent transactions
+- Add a form to submit transactions
+  - Only has to have sending (transfer) operation
+  - Creating can be automatic, just whenever the Fed returns the need or a normal address doesn't exist (seen from error)
+  - Either way, message needs to be **clear** that the txn will require 
+    - Minimum **10 XDB** sent to new account and **10 XDB** leftover, so min **20 XDB + gas (XDB) + transfer amt**
+  - XDB values displayed in a base currency (ZUSD????) would also be useful, but that's roadmap stuff
 - Set up the Go server, which will have federation and also txn building (since I can't get the JavaScript SDK working)
   - Test out the transaction builder part
 - Download Go, PostgreSQL, and the federation server and test them locally
@@ -133,4 +139,4 @@ Other wallets will have to update to display this though.
 If they don't it will just not send stuff to accounts that haven't been created and return an error.
 Some wallets may already be able to adjust the transaction to include a creation operation.
 
-For the xdbeam wallet, creation will be automatic, as well as setting their home domain to xdbe.am
+For the xdbeam wallet, creation will be automatic, as well as setting their home domain to xdbe.am (maybe also set inflation dest for revenue).
