@@ -56,10 +56,13 @@ To my understanding, there are 6 main steps, usually.
    - If they don't, the API will send back an error, which will probably be dispayed in the app
 
 So the places which need to be set up are:
-- The digitalbits.toml in HostCab
-- The federation server literally anywhere
-- The database can be anywhere also
-- (Bonus from further down) Extra API for making new accounts can also be anywhere (but I want to put it on HostCab)
+- HostCab
+  - The Web App
+  - /.well-known/digitalbits.toml
+- Netlify
+  - The Federation Server
+  - The txn and management server
+  - The Databases (Fed and Ctrl)
 
 ##### Database Details
 
