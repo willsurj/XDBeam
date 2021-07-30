@@ -24,7 +24,7 @@ If you have any feedback or advice, I can be contacted through info@xdbe.am (I'l
 - Add a wallet part to display:
   - Most recent transactions
 - Add a form to submit transactions
-  - Only has to have sending (transfer) operation
+  - Only has to have sending/beam (payment) operation
   - Creating can be automatic, just whenever the Fed returns the need or a normal address doesn't exist (seen from error)
   - Either way, message needs to be **clear** that the txn will require 
     - Minimum **10 XDB** sent to new account and **10 XDB** leftover, so min **20 XDB + gas (XDB) + transfer amt**
