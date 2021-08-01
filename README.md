@@ -142,4 +142,9 @@ Other wallets will have to update to display this though.
 If they don't it will just not send stuff to accounts that haven't been created and return an error.
 Some wallets may already be able to adjust the transaction to include a creation operation.
 
-For the xdbeam wallet, creation will be automatic, as well as setting their home domain to xdbe.am (maybe also set inflation dest for revenue).
+For the xdbeam wallet, creation will be automatic, as well as setting their home domain to xdbe.am
+
+## Known Issues
+
+- Reload makes everything reset
+- Each session can only handle one account login
