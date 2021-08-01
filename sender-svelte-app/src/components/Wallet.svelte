@@ -2,7 +2,6 @@
     import {
         balances,
         apiLoading,
-        logInKey,
         apiRequest
     } from '../store';
 
@@ -21,7 +20,10 @@
         btnText = "Refresh Data";
     }
 
-    onMount(apiRequest);
+    onMount(() => {
+        apiLoading.set(true);
+        apiRequest();
+    });
 </script>
 
 <main>
@@ -29,10 +31,11 @@
 
     <div class={$apiLoading ? "loading" : "response" }>
         <h3>Token Balances</h3>
+
         {#if !$apiLoading}
-        {#each $balances as tb}
-            <TokenBalance {...tb}/>
-        {/each}
+            {#each $balances as tb}
+               <TokenBalance {...tb}/>
+            {/each}
         {/if}
     </div>
 </main>

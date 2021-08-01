@@ -5,15 +5,15 @@
 	import Footer from './components/Footer.svelte';
 
 	import {
-		logInKey
+		loggedIn
 	} from './store'
 </script>
 
 <Header />
 
-{#if $logInKey === ""}
-<WalletPreview />
-{:else}
+{#if $loggedIn}
 <Wallet />
+{:else}
+<WalletPreview />
 {/if}
 <Footer />

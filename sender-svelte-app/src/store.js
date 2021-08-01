@@ -19,7 +19,7 @@ export const apiRequest = async () => {
     logInKey.subscribe(value => {
         key = value;
     })
-    let url = "https://frontier.testnet.digitalbits.io/accounts/" + key; // How do i read the value of logInKey???
+    let url = "https://frontier.testnet.digitalbits.io/accounts/" + key;
     await fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -30,5 +30,26 @@ export const apiRequest = async () => {
             console.log(error);
             apiLoading.set(false);
             return {};
+        })
+}
+
+export const accountTest = async () => {
+    let key;
+    logInKey.subscribe(value => {
+        key = value;
+    })
+    let url = "https://frontier.testnet.digitalbits.io/accounts/" + key;
+    return await fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data.status !== undefined) {
+                throw Error(data)
+            } else {
+                console.log(data);
+                return true;
+            }
+        }).catch(error => {
+            console.log(error);
+            return false;
         })
 }

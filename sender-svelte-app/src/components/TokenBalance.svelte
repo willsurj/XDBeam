@@ -1,8 +1,9 @@
 <script>
     export let asset_type;
     export let balance;
+    export let asset_code;
 
-    const asset = (asset_type === "native" ? "XDB" : asset_type);
+    const asset = (asset_type === "native" ? "XDB" : asset_code);
     const balFloat = parseFloat(balance)
     const balanceRounded = (balFloat < 1 ? balFloat.toFixed(4) : balFloat < 10 ? balFloat.toFixed(4) : balFloat < 1000 ?
         balFloat.toFixed(2) : balFloat.toFixed(0))

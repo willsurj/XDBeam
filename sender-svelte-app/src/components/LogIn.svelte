@@ -4,14 +4,15 @@
         apiData,
         apiLoading,
         loggedIn,
-        logInKey
+        logInKey,
+        accountTest
     } from '../store.js';
     import {
-        fade,
-        fly
+        fade
     } from 'svelte/transition';
 
     let wantsToLogIn = false;
+    let tryAgain = false;
     let text;
     $: key = $logInKey;
     $: if ($loggedIn) {
@@ -25,21 +26,31 @@
     }
 
     function logOutClick() {
-        console.log("Log Out Button Clicked");
+        console.log("Logged Out");
         loggedIn.update((li) => (!li));
         wantsToLogIn = false;
         logInKey.set("");
-        apiData.set("");
+        apiData.set({});
         apiLoading.set(false);
     }
 
     function logInClick() {
         console.log("Log In Button Clicked");
+
         logInKey.set(key);
-        loggedIn.update((li) => (!li));
-        wantsToLogIn = false;
-        console.log(logInKey);
-        console.log($logInKey);
+        accountTest().then(x => {
+            console.log(x);
+            if (x) {
+                console.log("gj")
+                loggedIn.update((li) => (!li));
+                wantsToLogIn = false;
+                console.log(`${$logInKey} logged in`);
+                tryAgain = false;
+            } else {
+                tryAgain = true;
+                console.log("try again bucko")
+            }
+        })
     }
 </script>
 
@@ -60,7 +71,7 @@
 {:else}
 
 <form action="">
-    <label><input type="text" bind:value={key} in:fade></label>  
+    <label><input class={tryAgain ? "error" : false} type="text" bind:value={key} in:fade></label>  
         <Button btnClass="lib" on:click={logInClick}>
             <span>{text}</span>
         </Button>
@@ -75,6 +86,21 @@
     }
     form > * {
         margin-right: 1em;
+    }
+    input {
+        border-radius: 3px;
+        outline: none;
+        &:focus {
+            border: 2px solid var(--btn-bg);
+        }
+    }
+
+    .error {
+        border: 2px solid red;
+        outline: none;
+        &:focus {
+            border: 3px solid red;
+        }
     }
 
 </style>
