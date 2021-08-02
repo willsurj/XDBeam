@@ -7,6 +7,8 @@ export const loggedIn = writable(false);
 
 export const logInKey = writable("");
 
+export const txPopupActive = writable(false);
+
 export const apiData = writable({});
 
 export const apiDataTransactions = writable({});

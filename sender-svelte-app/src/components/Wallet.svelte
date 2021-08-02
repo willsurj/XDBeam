@@ -27,29 +27,30 @@
         apiRequest();
     });
 </script>
+<div class="everything">
+    <h2>Check Your Wallet</h2>
+    <main>
+        <Button on:click="{apiRequest}">{btnText}</Button>
 
-<main>
-    <Button on:click="{apiRequest}">{btnText}</Button>
+        <div class={$apiLoading ? "loading" : "response" }>
+            <h3>Token Balances</h3>
 
-    <div class={$apiLoading ? "loading" : "response" }>
-        <h3>Token Balances</h3>
-
-        {#if !$apiLoading}
+            {#if !$apiLoading}
             {#each $balances as tb}
                <TokenBalance {...tb}/>
             {/each}
-        {/if}
+            {/if}
 
-        <h3>Recent Transactions</h3>
+            <h3>Recent Transactions</h3>
 
-        {#if !$apiLoading}
-            {#each $apiDataTransactions as tx}
-               <TransactionDisplay {...tx}/>
-            {/each}
-        {/if}
-    </div>
-</main>
-
+            {#if !$apiLoading}
+                {#each $apiDataTransactions as tx}
+                   <TransactionDisplay {...tx}/>
+                {/each}
+            {/if}
+        </div>
+    </main>
+</div>
 <style lang="scss">
     .response,
     .loading {
@@ -71,9 +72,18 @@
         background-color: var(--middle-dark);
         color: white;
         padding: 1.3em;
-        width: 48%;
         filter: drop-shadow(0px 0px 2px var(--middle));
         box-sizing: border-box;
+    }
+
+    .everything {
+        box-sizing: border-box;
+        width: 48%;
+    }
+
+    
+    h2 {
+        text-align: center;
     }
 
 </style>

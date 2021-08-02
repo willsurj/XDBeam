@@ -46,6 +46,13 @@ main {
     box-sizing: border-box;
 }
 
+select {
+    display: inline;
+    color: inherit;
+    background-color: inherit;
+    border-radius: 7px;
+}
+
 input {
     margin: 0;
 }

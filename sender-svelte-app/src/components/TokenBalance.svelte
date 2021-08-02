@@ -19,6 +19,7 @@
         display: inline;
     }
 
+
     .container {
         width: 80%;
         background-color: var(--blue);
