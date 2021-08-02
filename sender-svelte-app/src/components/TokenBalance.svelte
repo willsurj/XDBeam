@@ -21,7 +21,7 @@
 
     .container {
         width: 80%;
-        background-color: var(--middle);
+        background-color: var(--blue);
         color: white;
         font-weight: bold;
         display: flex;

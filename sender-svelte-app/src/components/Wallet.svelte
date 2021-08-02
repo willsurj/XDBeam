@@ -2,7 +2,8 @@
     import {
         balances,
         apiLoading,
-        apiRequest
+        apiRequest,
+        apiDataTransactions
     } from '../store';
 
     import {
@@ -10,14 +11,15 @@
     } from 'svelte';
 
     import TokenBalance from './TokenBalance.svelte';
-    import Button from './Button.svelte'
+    import Button from './Button.svelte';
+    import TransactionDisplay from './TransactionDisplay.svelte';
 
     let btnText;
 
     $: if ($apiLoading) {
         btnText = "Loading..."
     } else {
-        btnText = "Refresh Data";
+        btnText = "Refresh";
     }
 
     onMount(() => {
@@ -37,6 +39,14 @@
                <TokenBalance {...tb}/>
             {/each}
         {/if}
+
+        <h3>Recent Transactions</h3>
+
+        {#if !$apiLoading}
+            {#each $apiDataTransactions as tx}
+               <TransactionDisplay {...tx}/>
+            {/each}
+        {/if}
     </div>
 </main>
 
@@ -47,11 +57,23 @@
         flex-direction: column;
         justify-content: safe;
         align-items: center;
-        width: 50%;
+        width: 100%;
         overflow: hidden;
     }
 
     .loading {
         color: rgb(172, 172, 172);
     }
+
+    main {
+        border-radius: 2em;
+        border: 1px solid var(--light);
+        background-color: var(--middle-dark);
+        color: white;
+        padding: 1.3em;
+        width: 48%;
+        filter: drop-shadow(0px 0px 2px var(--middle));
+        box-sizing: border-box;
+    }
+
 </style>

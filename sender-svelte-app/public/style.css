@@ -1,16 +1,20 @@
 :root {
-    --black: #111;
+    --black: rgb(24, 24, 24);
     --white: #eee;
     --green: #22b573;
     --blue: #278dc1;
     --middle: #25a09b;
     --light: #7ce6e2;
 
+    --green-dark: #2f3d38;
+    --blue-dark: #2f434d;
+    --middle-dark: #293535;
+
     --btn-bg: rgb(218, 236, 230);
     --btn-txt: #538176;
     --btn-bg-h: rgb(198, 216, 210);
     --btn-txt-h: #4b9282;
-    --btn-bg-a: #2b574c;
+    --btn-bg-a: #304948;
     --btn-txt-a: rgb(232, 248, 243);
 }
 
@@ -20,11 +24,16 @@ h1 {
     font-size: 4em;
     font-weight: 100;
     margin: 10px;
+    box-sizing: border-box;
 }
 
 body {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    background-color: var(--black);
+    color: white;
+    box-sizing: border-box;
 }
 
 main {
@@ -34,6 +43,7 @@ main {
     flex-direction: column;
     align-items: center;
     max-width: 1200px;
+    box-sizing: border-box;
 }
 
 input {
@@ -60,8 +70,4 @@ input {
 
 .cls-3 {
     fill: white !important;
-}
-
-.lib > span {
-    text-transform: uppercase;
 }

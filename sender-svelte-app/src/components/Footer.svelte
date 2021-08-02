@@ -6,9 +6,10 @@
 <style>
     footer {
         width: 100%;
-        background-color: var(--black);
+        background-color: var(--middle-dark);
         color: white;
         margin-top: auto;
+        filter: drop-shadow(0px 0px 4px var(--middle-dark));
     }
 
     p {

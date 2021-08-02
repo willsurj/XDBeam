@@ -9,6 +9,8 @@ export const logInKey = writable("");
 
 export const apiData = writable({});
 
+export const apiDataTransactions = writable({});
+
 export const apiLoading = writable(true);
 
 export const balances = derived(apiData, $apiData => $apiData.balances)
@@ -25,6 +27,17 @@ export const apiRequest = async () => {
         .then(data => {
             console.log(data);
             apiData.set(data);
+        }).catch(error => {
+            console.log(error);
+            apiLoading.set(false);
+            return {};
+        })
+    url = "https://frontier.testnet.digitalbits.io/accounts/" + key + "/transactions?limit=5";
+    await fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            apiDataTransactions.set(data._embedded.records);
             apiLoading.set(false);
         }).catch(error => {
             console.log(error);

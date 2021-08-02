@@ -17,6 +17,10 @@
         cursor: pointer;
         transition: 100ms;
         margin: 0;
+        font-size: 1.1em;
+        font-weight: 700;
+        font-family: "Quicksand", sans-serif;
+        text-transform: uppercase;
     }
 
     button:hover {
