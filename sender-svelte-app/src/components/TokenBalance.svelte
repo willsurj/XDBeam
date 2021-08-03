@@ -30,5 +30,6 @@
         justify-content: space-between;
         padding: 0.6em 1em;
         border-radius: 6px;
+        margin-bottom: 1em;
     }
 </style>

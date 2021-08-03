@@ -64,6 +64,7 @@
 {:else}
 <!-- log in block -->
 {#if !wantsToLogIn}
+
 <Button btnClass="lib" on:click={logInFormClick}>
     <span>{text}</span>
 </Button>

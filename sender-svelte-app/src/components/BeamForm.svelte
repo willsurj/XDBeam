@@ -3,9 +3,14 @@
 
     import {
         balances,
-        apiLoading
+        apiLoading,
+        txPopupActive
     } from '../store';
     import Button from './Button.svelte';
+
+    function signForm() {
+        txPopupActive.set(true);
+    }
 </script>
 <div class="everything">
     <h2>Send DigitalBits to Anyone</h2>
@@ -29,7 +34,7 @@
                     {/each}
                 </select>
         </div>
-        <Button>Sign and Submit</Button>
+        <Button on:click={signForm}>Sign and Submit</Button>
         {/if}
     </form>
 </main>

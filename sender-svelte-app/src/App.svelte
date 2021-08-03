@@ -4,26 +4,31 @@
 	import Header from './components/Header.svelte';
 	import Footer from './components/Footer.svelte';
 	import BeamForm from './components/BeamForm.svelte';
+	import Popup from './components/Popup.svelte';
 
 	import {
 		loggedIn
 	} from './store'
+	import Button from './components/Button.svelte';
 </script>
 
 <Header />
 
 {#if $loggedIn}
-<div>
-	<article class="ui">
-		<Wallet />
-		<BeamForm />
-	</article>
-</div>
+	<div>
+		<article class="ui">
+			<Wallet />
+			<BeamForm />
+		</article>
+	</div>
+
 {:else}
-<div>
-	<WalletPreview />
-</div>
+	<div>
+		<WalletPreview />
+	</div>
 {/if}
+
+<Popup />
 <Footer />
 
 <style>
