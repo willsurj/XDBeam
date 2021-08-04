@@ -11,7 +11,7 @@ Currently available is a prototype UI for XDBeam's main service of facilitating 
 Also available is a prototype UI for participating in the federation service. 
 This will allows anyone to make payments to you by using your email address followed by "\*xdbe.am", instead of remembering a 56-digit string.
 In the XDBeam wallet, the "\*xdbe.am" suffix will be added automatically to all payments made to email addresses, and if an account doesn't exist in our system yet, a key pair will be generated and the details sent to their email, allowing you to send your digitalbits to anyone with an email address, even if they have never used DigitalBits before.
-These services will soon be available at [XDBe.am][3] and [federation.XDBe.am][5]
+These services will soon be available at [xdbe.am][3] and [federation.xdbe.am][5]
 
 Watch [our introduction video][4] for more information and a walkthrough of the system.
 
