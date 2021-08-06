@@ -36,7 +36,7 @@
             <h3>Token Balances</h3>
 
             {#if !$apiLoading}
-            {#each $balances as tb}
+            {#each $balances.reverse() as tb}
                <TokenBalance {...tb}/>
             {/each}
             {/if}
@@ -44,7 +44,7 @@
             <h3>Recent Transactions</h3>
 
             {#if !$apiLoading}
-                {#each $apiDataTransactions as tx}
+                {#each $apiDataTransactions.reverse() as tx}
                    <TransactionDisplay {...tx}/>
                 {/each}
             {/if}

@@ -48,7 +48,7 @@
 
 <div class="container">
     <div>{date}</div>
-    <div>Creation (placeholder)</div>
+    <div>Transaction</div>
 </div>
 
 <style>

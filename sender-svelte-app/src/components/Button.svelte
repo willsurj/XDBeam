@@ -1,9 +1,10 @@
 <script>
     export let btnClass = "";
     export let btnType = "button";
+    export let disabled = false;
 </script>
 
-<button type={btnType} class={btnClass} on:click>
+<button type={btnType} class={btnClass} disabled={disabled} on:click>
     <slot>Click Me</slot>
 </button>
 
@@ -32,6 +33,10 @@
         transition: 50ms;
         background: var(--btn-bg-a);
         color: var(--btn-txt-a);
+    }
+
+    button:disabled {
+        filter: grayscale(1) brightness(0.5);
     }
 
     .lib {

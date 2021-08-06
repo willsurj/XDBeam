@@ -9,7 +9,6 @@
 	import {
 		loggedIn
 	} from './store'
-	import Button from './components/Button.svelte';
 </script>
 
 <Header />
@@ -21,14 +20,13 @@
 			<BeamForm />
 		</article>
 	</div>
-
+	<Popup />
 {:else}
 	<div>
 		<WalletPreview />
 	</div>
 {/if}
 
-<Popup />
 <Footer />
 
 <style>

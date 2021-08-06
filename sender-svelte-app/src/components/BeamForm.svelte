@@ -66,6 +66,9 @@
     h2 {
         text-align: center;
     }
+    option {
+        color: var(--middle-dark);
+    }
 
     .field {
         width: 100%;
